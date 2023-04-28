@@ -3,7 +3,7 @@ PRAGMA FOREIGN_KEYS = ON;
 
 DROP TABLE IF EXISTS RESERVA;
 CREATE TABLE RESERVA (
-	codigo_reserva PRIMARY KEY,
+	codigo_reserva INTEGER PRIMARY KEY,
 	fecha_reserva TEXT,
 	duracion REAL,
 	hora INTEGER,
@@ -24,7 +24,7 @@ CREATE TABLE ESPACIO (
 	pizarra INTEGER CHECK (pizarra = 0 OR pizarra = 1),
 	proyector INTEGER CHECK (proyector = 0 OR proyector = 1),
   	nombre INTEGER CHECK(nombre IN (1.1, 1.2,2.1,2.2,0.1)),
-  	codigo_reserva,
+  	codigo_reserva INTEGER,
   	FOREIGN KEY(codigo_reserva) REFERENCES RESERVA(codigo_reserva) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
