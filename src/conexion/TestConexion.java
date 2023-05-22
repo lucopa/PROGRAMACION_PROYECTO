@@ -1,3 +1,7 @@
+package conexion;
+
+import conexion.ConexionSingleton;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 public class TestConexion {

@@ -1,3 +1,5 @@
+package conexion;
+
 import org.sqlite.SQLiteConfig;
 
 import java.sql.Connection;

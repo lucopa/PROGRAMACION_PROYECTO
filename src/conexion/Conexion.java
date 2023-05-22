@@ -1,3 +1,5 @@
+package conexion;
+
 import org.sqlite.SQLiteConfig;
 
 import java.nio.file.Paths;
@@ -14,7 +16,7 @@ public class Conexion {
             Properties properties = new Properties();
             try {
                 properties.load(Files.newBufferedReader(
-                        Paths.get("config.properties")));
+                        Paths.get("conexion/config.properties")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
