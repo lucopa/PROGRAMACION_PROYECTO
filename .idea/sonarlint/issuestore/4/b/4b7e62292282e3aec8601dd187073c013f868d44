@@ -1,0 +1,16 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü‘‰ğúÿÿÿÿ8’‰Î1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü‘‰ğúÿÿÿÿ8’‰Î1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü‘‰ğúÿÿÿÿ8¡–Ş¡ƒ1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÕçŸ8¹Óæ¡ƒ1
+r	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î”ûÿÿÿÿ8¹Óæ¡ƒ1
+m	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ì‡Õ8ºÓæ¡ƒ1
+z	java:S116"YRename this field "codigo_reserva" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ§ıÿÿÿÿ8Ÿ‰Î1
+y	java:S116"XRename this field "fecha_reserva" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…åºïıÿÿÿÿ8¡‰Î1
+v	java:S116"URename this field "id_espacio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…©˜üÿÿÿÿ8¢‰Î1
+i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä‹¿w8©‰Î1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÕçŸ8«‰Î1
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùì÷©øÿÿÿÿ8­‰Î1
+o	java:S100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î”ûÿÿÿÿ8¯‰Î1
+o	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ÌÆşÿÿÿÿ8µ‰Î1
+j	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ì‡Õ8¶‰Î1
