@@ -23,7 +23,7 @@ CREATE TABLE ESPACIO (
 	ordenadores INTEGER CHECK (ordenadores = 0 OR ordenadores = 1),
 	pizarra INTEGER CHECK (pizarra = 0 OR pizarra = 1),
 	proyector INTEGER CHECK (proyector = 0 OR proyector = 1),
-  	nombre INTEGER CHECK(nombre IN (1.1, 1.2,2.1,2.2,0.1)),
+  	nombre TEXT CHECK(nombre IN ("1.1", "1.2","2.1","2.2","0.1")),
   	codigo_reserva INTEGER,
   	FOREIGN KEY(codigo_reserva) REFERENCES RESERVA(codigo_reserva) ON DELETE CASCADE ON UPDATE CASCADE
 );

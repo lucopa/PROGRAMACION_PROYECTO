@@ -9,10 +9,10 @@ public class Espacio {
     private int ordenadores;
     private int pizarra;
     private int proyector;
-    private int nombre;
+    private String nombre;
     private int codigo_reserva;
 
-    public Espacio(int id_espacio, String descripcion, int capacidad, int ordenadores, int pizarra, int proyector, int nombre, int codigo_reserva) {
+    public Espacio(int id_espacio, String descripcion, int capacidad, int ordenadores, int pizarra, int proyector, String nombre, int codigo_reserva) {
         this.id_espacio = id_espacio;
         this.descripcion = descripcion;
         this.capacidad = capacidad;
@@ -71,11 +71,11 @@ public class Espacio {
         this.proyector = proyector;
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -89,7 +89,7 @@ public class Espacio {
 
     @Override
     public String toString() {
-        return String.format("%d,%s,%d,%d,%d,%d,%d", id_espacio,descripcion,capacidad,ordenadores,pizarra,proyector,nombre,codigo_reserva);
+        return String.format("%d,%s,%d,%d,%d,%s,%d", id_espacio,descripcion,capacidad,ordenadores,pizarra,proyector,nombre,codigo_reserva);
     }
 
     @Override

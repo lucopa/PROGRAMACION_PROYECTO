@@ -20,7 +20,7 @@ public class EspacioDAOImp implements EspacioDAO{
     }
     @Override
     public boolean insertarEspacio(Espacio espacio) throws SQLException {
-        String sql = " INSERT INTO espacio (int id_espacio, String descripcion, int capacidad, int ordenadores, int pizarra, int proyector, int nombre, int codigo_reserva) VALUES ( ?, ?,?,?,?,?,?,?);";
+        String sql = " INSERT INTO espacio (int id_espacio, String descripcion, int capacidad, int ordenadores, int pizarra, int proyector, String nombre, int codigo_reserva) VALUES ( ?, ?,?,?,?,?,?,?);";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, espacio.getId_espacio());
         sentencia.setString(2, espacio.getDescripcion());
@@ -28,7 +28,7 @@ public class EspacioDAOImp implements EspacioDAO{
         sentencia.setInt(4, espacio.getOrdenadores());
         sentencia.setInt(5, espacio.getPizarra());
         sentencia.setInt(6, espacio.getProyector());
-        sentencia.setInt(7, espacio.getNombre());
+        sentencia.setString(7, espacio.getNombre());
         sentencia.setInt(8,espacio.getCodigo_reserva());
         int exito = sentencia.executeUpdate();
         if (sentencia != null)
@@ -52,7 +52,7 @@ public class EspacioDAOImp implements EspacioDAO{
         String sql = "UPDATE espacio SET id_espacio= ?, nombre ?;";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, newEspacio.getId_espacio());
-        sentencia.setInt(2, newEspacio.getNombre());
+        sentencia.setString(2, newEspacio.getNombre());
         int exito = sentencia.executeUpdate();
         if (sentencia != null)
             sentencia.close();
@@ -73,7 +73,7 @@ public class EspacioDAOImp implements EspacioDAO{
             int ordenadores    = resultado.getInt("ordenadores");
             int pizarra   = resultado.getInt("pizarra");
             int proyector    = resultado.getInt("proyector");
-            int nombre    = resultado.getInt("nombre");
+            String nombre    = resultado.getString("nombre");
             int codigo_reserva    = resultado.getInt("codigo_reserva");
             espacio= new Espacio(id_espacio,descripcion,capacidad,ordenadores,proyector,pizarra,nombre,codigo_reserva);
         }
@@ -97,7 +97,7 @@ public class EspacioDAOImp implements EspacioDAO{
             int ordenadores    = resultado.getInt("ordenadores");
             int pizarra   = resultado.getInt("pizarra");
             int proyector    = resultado.getInt("proyector");
-            int nombre    = resultado.getInt("nombre");
+            String nombre    = resultado.getString("nombre");
             int codigo_reserva    = resultado.getInt("codigo_reserva");
             Espacio espacio= new Espacio(id,descripcion,capacidad,ordenadores,proyector,pizarra,nombre,codigo_reserva);
             espacios.add(espacio);

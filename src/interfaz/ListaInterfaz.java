@@ -1,8 +1,16 @@
 package interfaz;
+import modelo.Espacio;
+import modelo.EspacioDAOImp;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class ListaInterfaz extends JFrame {
+
+
     private JTextField idEspacioField;
     private JTextArea descripcionArea;
     private JTextField capacidadField;
@@ -14,14 +22,25 @@ public class ListaInterfaz extends JFrame {
     private JRadioButton noPizarraRadioButton;
     private JTextField nombreField;
 
+
+
     public ListaInterfaz() {
-        // Configurar la interfaz gráfica
+
+
+
         setTitle("Lista de Espacios");
-        setSize(400, 300);
+        setSize(800, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JPanel formularioPanel = new JPanel(new GridLayout(7, 2));
+
+
+        JPanel formularioPanel = new JPanel(new GridLayout(0, 1));
+
+        this.getContentPane().add(formularioPanel);
+
+        
+
 
         formularioPanel.add(new JLabel("ID Espacio:"));
         idEspacioField = new JTextField();
@@ -70,19 +89,25 @@ public class ListaInterfaz extends JFrame {
 
         JPanel botonesPanel = new JPanel(new FlowLayout());
 
+        JButton retrocederButton = new JButton("<<");
         JButton insertarButton = new JButton("Insertar");
         JButton borrarButton = new JButton("Borrar");
         JButton actualizarButton = new JButton("Actualizar");
-        JButton avanzarButton = new JButton("Avanzar");
-        JButton retrocederButton = new JButton("Retroceder");
+        JButton avanzarButton = new JButton(">>");
 
+
+
+        botonesPanel.add(retrocederButton);
         botonesPanel.add(insertarButton);
         botonesPanel.add(borrarButton);
         botonesPanel.add(actualizarButton);
         botonesPanel.add(avanzarButton);
-        botonesPanel.add(retrocederButton);
+
+
 
         add(botonesPanel, BorderLayout.SOUTH);
+
+
 
         setVisible(true);
     }
