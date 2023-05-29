@@ -1,6 +1,4 @@
-package conexion;
-
-import conexion.ConexionSingleton;
+package modelo;
 
 import java.sql.Connection;
 import java.sql.SQLException;

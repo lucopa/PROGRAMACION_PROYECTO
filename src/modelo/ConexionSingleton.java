@@ -1,4 +1,4 @@
-package conexion;
+package modelo;
 
 import org.sqlite.SQLiteConfig;
 

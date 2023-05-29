@@ -1,4 +1,4 @@
-package conexion;
+package modelo;
 
 import org.sqlite.SQLiteConfig;
 
@@ -16,7 +16,7 @@ public class Conexion {
             Properties properties = new Properties();
             try {
                 properties.load(Files.newBufferedReader(
-                        Paths.get("conexion/config.properties")));
+                        Paths.get("modelo/config.properties")));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
