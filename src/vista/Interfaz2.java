@@ -102,7 +102,7 @@ public class Interfaz2 extends JFrame{
                     indiceEspacioActual=0;
                     if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
                         int idEspacio = Integer.parseInt(id_espacio.getText());
-                        indiceEspacioActual=idEspacio-1;
+                        indiceEspacioActual=idEspacio;
                     }
                     EspacioDAO espacioDAO = new EspacioDAOImp();
                     List<Espacio> espacios = espacioDAO.obtenerTodosLosEspacios();
@@ -110,22 +110,23 @@ public class Interfaz2 extends JFrame{
                         JOptionPane.showMessageDialog(Interfaz2.this,"No hay espacios");
                         return;
                     }
-                    if(indiceEspacioActual==espacios.size()-1){  //si hemos llegado al ultimo espacio, no avanza
+                    if(indiceEspacioActual==espacios.size()){  //si hemos llegado al ultimo espacio, no avanza
                         JOptionPane.showMessageDialog(Interfaz2.this,"No se puede avanzar");
                         return;
                     }
-                    indiceEspacioActual++;
+
                     Espacio espacio = espacios.get(indiceEspacioActual);
                     id_espacio.setText(String.valueOf(espacio.getId_espacio()));
                     descripcion.setText(espacio.getDescripcion());
                     capacidad.setText(String.valueOf(espacio.getCapacidad()));
-                    ordenadorSi.setText(String.valueOf(espacio.getOrdenadores()));
-                    ordenadorNo.setText(String.valueOf(espacio.getOrdenadores()));
-                    proyectorSi.setText(String.valueOf(espacio.getProyector()));
-                    proyectorNo.setText(String.valueOf(espacio.getProyector()));
-                    pizarraSi.setText(String.valueOf(espacio.getPizarra()));
-                    pizarraNo.setText(String.valueOf(espacio.getPizarra()));
+                    ordenadorSi.setSelected(espacio.getOrdenadores()==1);
+                    ordenadorNo.setSelected(espacio.getOrdenadores()==0);
+                    proyectorSi.setSelected(espacio.getProyector()==1);
+                    proyectorNo.setSelected(espacio.getProyector()==0);
+                    pizarraSi.setSelected(espacio.getPizarra()==1);
+                    pizarraNo.setSelected(espacio.getPizarra()==0);
                     nombre.setText(String.valueOf(espacio.getNombre()));
+                    indiceEspacioActual++;
 
                 } catch (Exception ex) {
                     throw new RuntimeException(ex);
@@ -164,12 +165,12 @@ public class Interfaz2 extends JFrame{
                     id_espacio.setText(String.valueOf(espacio.getId_espacio()));
                     descripcion.setText(espacio.getDescripcion());
                     capacidad.setText(String.valueOf(espacio.getCapacidad()));
-                    ordenadorSi.setText(String.valueOf(espacio.getOrdenadores()));
-                    ordenadorNo.setText(String.valueOf(espacio.getOrdenadores()));
-                    proyectorSi.setText(String.valueOf(espacio.getProyector()));
-                    proyectorNo.setText(String.valueOf(espacio.getProyector()));
-                    pizarraSi.setText(String.valueOf(espacio.getPizarra()));
-                    pizarraNo.setText(String.valueOf(espacio.getPizarra()));
+                    ordenadorSi.setSelected(espacio.getOrdenadores()==1);
+                    ordenadorNo.setSelected(espacio.getOrdenadores()==0);
+                    proyectorSi.setSelected(espacio.getProyector()==1);
+                    proyectorNo.setSelected(espacio.getProyector()==0);
+                    pizarraSi.setSelected(espacio.getPizarra()==1);
+                    pizarraNo.setSelected(espacio.getPizarra()==0);
                     nombre.setText(String.valueOf(espacio.getNombre()));
 
                 } catch (SQLException ex) {
