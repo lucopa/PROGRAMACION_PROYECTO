@@ -20,7 +20,7 @@ public class EspacioDAOImp implements EspacioDAO{
     }
     @Override
     public boolean insertarEspacio(Espacio espacio) throws SQLException {
-        String sql = " INSERT INTO espacio (int id_espacio, String descripcion, int capacidad, int ordenadores, int pizarra, int proyector, String nombre, int codigo_reserva) VALUES ( ?, ?,?,?,?,?,?,?);";
+        String sql = " INSERT INTO espacio ( id_espacio,  descripcion,  capacidad,  ordenadores,  pizarra,  proyector,  nombre,  codigo_reserva) VALUES ( ?, ?,?,?,?,?,?,?);";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, espacio.getId_espacio());
         sentencia.setString(2, espacio.getDescripcion());

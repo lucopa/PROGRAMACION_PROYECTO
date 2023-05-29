@@ -1,33 +1,41 @@
 package interfaz;
 
+import modelo.Espacio;
+import modelo.EspacioDAO;
+import modelo.EspacioDAOImp;
+
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class Interfaz2 extends JFrame{
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextArea textArea1;
-    private JRadioButton siRadioButton;
-    private JRadioButton noRadioButton;
-    private JRadioButton siRadioButton1;
-    private JRadioButton noRadioButton1;
-    private JRadioButton siRadioButton2;
-    private JRadioButton noRadioButton2;
-    private JTextField textField3;
+    private JTextField id_espacio;
+    private JTextField nombre;
+    private JTextArea descripcion;
+    private JRadioButton ordenadorSi;
+    private JRadioButton ordenadorNo;
+    private JRadioButton proyectorSi;
+    private JRadioButton proyectorNo;
+    private JRadioButton pizarraSi;
+    private JRadioButton pizarraNo;
+    private JTextField capacidad;
     private JPanel panel1;
     private JButton actualizarButton;
-    private JButton button4;
-    private JButton button5;
+    private JButton delante;
+    private JButton detras;
     private JButton borrarButton;
     private JButton insertarButton;
+
+    private int indiceEspacioActual;
 
 
     public Interfaz2()  {
         crearVista();
 
-
-<<<<<<< Updated upstream
-=======
         insertarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -214,7 +222,7 @@ public class Interfaz2 extends JFrame{
         pizarraSi.setSelected(false);
         pizarraNo.setSelected(false);
         nombre.setText("");
->>>>>>> Stashed changes
+
     }
 
     private void crearVista() {

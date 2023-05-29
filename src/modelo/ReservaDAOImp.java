@@ -19,7 +19,7 @@ public class ReservaDAOImp implements ReservaDAO {
 
     @Override
     public boolean insertarUsuario(Reserva reserva) throws SQLException {
-        String sql = " INSERT INTO usuario (codigo_reserva,fecha_reserva,duracion,hora,motivo,id_espacio) VALUES ( ?, ?,?,?,?,?);";
+        String sql = " INSERT INTO reserva (codigo_reserva,fecha_reserva,duracion,hora,motivo,id_espacio) VALUES ( ?, ?,?,?,?,?);";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, reserva.getCodigo_reserva());
         sentencia.setString(2, reserva.getFecha_reserva());

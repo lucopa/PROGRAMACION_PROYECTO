@@ -10,7 +10,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="6daf0" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="6daf0" class="javax.swing.JTextField" binding="id_espacio">
         <constraints>
           <grid row="0" column="2" row-span="2" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -26,7 +26,7 @@
           <text value="Descripción"/>
         </properties>
       </component>
-      <component id="ef927" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+      <component id="ef927" class="javax.swing.JTextArea" binding="descripcion">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -42,7 +42,7 @@
           <text value="Ordenadores"/>
         </properties>
       </component>
-      <component id="74954" class="javax.swing.JRadioButton" binding="siRadioButton" default-binding="true">
+      <component id="74954" class="javax.swing.JRadioButton" binding="ordenadorSi">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -50,7 +50,7 @@
           <text value="Si"/>
         </properties>
       </component>
-      <component id="bd11" class="javax.swing.JRadioButton" binding="noRadioButton" default-binding="true">
+      <component id="bd11" class="javax.swing.JRadioButton" binding="ordenadorNo">
         <constraints>
           <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -66,7 +66,7 @@
           <text value="Proyector"/>
         </properties>
       </component>
-      <component id="19b35" class="javax.swing.JRadioButton" binding="siRadioButton1" default-binding="true">
+      <component id="19b35" class="javax.swing.JRadioButton" binding="proyectorSi">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -74,7 +74,7 @@
           <text value="Si"/>
         </properties>
       </component>
-      <component id="609e0" class="javax.swing.JRadioButton" binding="noRadioButton1" default-binding="true">
+      <component id="609e0" class="javax.swing.JRadioButton" binding="proyectorNo">
         <constraints>
           <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -90,7 +90,7 @@
           <text value="Pizarra"/>
         </properties>
       </component>
-      <component id="5c9ce" class="javax.swing.JRadioButton" binding="siRadioButton2" default-binding="true">
+      <component id="5c9ce" class="javax.swing.JRadioButton" binding="pizarraSi">
         <constraints>
           <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -98,7 +98,7 @@
           <text value="Si"/>
         </properties>
       </component>
-      <component id="2d3fb" class="javax.swing.JRadioButton" binding="noRadioButton2" default-binding="true">
+      <component id="2d3fb" class="javax.swing.JRadioButton" binding="pizarraNo">
         <constraints>
           <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -106,7 +106,7 @@
           <text value="No"/>
         </properties>
       </component>
-      <component id="ae621" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="ae621" class="javax.swing.JTextField" binding="capacidad">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -138,7 +138,7 @@
           <text value="Nombre"/>
         </properties>
       </component>
-      <component id="3dd02" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="3dd02" class="javax.swing.JTextField" binding="nombre">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -154,7 +154,7 @@
           <text value="Actualizar"/>
         </properties>
       </component>
-      <component id="29d7c" class="javax.swing.JButton" binding="button4" default-binding="true">
+      <component id="29d7c" class="javax.swing.JButton" binding="delante">
         <constraints>
           <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -162,7 +162,7 @@
           <text value="&gt;&gt;"/>
         </properties>
       </component>
-      <component id="43153" class="javax.swing.JButton" binding="button5" default-binding="true">
+      <component id="43153" class="javax.swing.JButton" binding="detras">
         <constraints>
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
