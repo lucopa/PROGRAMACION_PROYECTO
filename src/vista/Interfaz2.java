@@ -135,9 +135,9 @@ public class Interfaz2 extends JFrame{
         });
 
 
-        detras.addChangeListener(new ChangeListener() {
+        detras.addActionListener(new ActionListener() {
             @Override
-            public void stateChanged(ChangeEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 try {
                     EspacioDAO espacioDAO = new EspacioDAOImp();
                     List<Espacio> espacios = null;
