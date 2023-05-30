@@ -247,4 +247,6 @@ public class Interfaz2 extends JFrame{
 
 
     }
+
+
 }
