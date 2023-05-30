@@ -1,5 +1,6 @@
 package vista;
 
+import controlador.EspacioController;
 import modelo.Espacio;
 import modelo.EspacioDAO;
 import modelo.EspacioDAOImp;
@@ -32,7 +33,11 @@ public class Interfaz2 extends JFrame{
     private JButton insertarButton;
 
     private int indiceEspacioActual;
+    private EspacioController espacioController;
 
+    public void setEspacioController(EspacioController espacioController) {
+        this.espacioController = espacioController;
+    }
 
     public Interfaz2()  {
         crearVista();
@@ -51,20 +56,9 @@ public class Interfaz2 extends JFrame{
 
                     Espacio nuevoEspacio = new Espacio(idEspacio, descripcion2, capacidad2, ordenadores, pizarra, proyector, nombre2, 0);
 
-                    EspacioDAO espacioDAO = new EspacioDAOImp();
-                    boolean exito = espacioDAO.insertarEspacio(nuevoEspacio);
-
-                    if (exito) {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "Espacio insertado correctamente");
-                        // Limpiar los campos después de la inserción
-                        limpiarCampos();
-                    } else {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "Error al insertar el espacio");
-                    }
+                   espacioController.agregarEspacio(nuevoEspacio);
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(Interfaz2.this, "Error de formato en los campos numéricos");
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(Interfaz2.this, "Error de base de datos: " + ex.getMessage());
                 }
 
 
@@ -77,18 +71,9 @@ public class Interfaz2 extends JFrame{
                 try {
                     int idEspacio = Integer.parseInt(id_espacio.getText());
                     EspacioDAO espacioDAO = new EspacioDAOImp();
-                    boolean exito = espacioDAO.eliminarEspacioPorID(idEspacio);
+                    
+                    espacioController.eliminarEspacio(idEspacio);
 
-                    if (exito) {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "Espacio borrado correctamente");
-                        // Limpiar los campos después de la inserción
-                        limpiarCampos();
-                    } else {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "Error al borrar el espacio");
-                    }
-
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(Interfaz2.this, "Error de formato en los campos numéricos");
                 }
@@ -213,7 +198,7 @@ public class Interfaz2 extends JFrame{
             }
 
 
-    private void limpiarCampos() {
+    public void limpiarCampos() {
         id_espacio.setText("");
         descripcion.setText("");
         capacidad.setText("");
@@ -244,9 +229,19 @@ public class Interfaz2 extends JFrame{
         JFrame frame = new Interfaz2();
         frame.setVisible(true);
 
-
-
     }
 
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(Interfaz2.this, mensaje);
+        
+    }
 
+    public void mostrarEspacios(List<Espacio> espacios) {
+    }
+
+    public void iniciar() {
+    }
+
+    public void mostrarEspacio(Espacio espacio) {
+    }
 }

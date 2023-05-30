@@ -1,10 +1,19 @@
-import controlador.Controladores;
+
+import controlador.EspacioController;
+import modelo.EspacioDAO;
+import modelo.EspacioDAOImp;
 import vista.Interfaz2;
 
 public class Main {
     public static void main(String[] args) {
+
+        EspacioDAO espacioDAO = new EspacioDAOImp();
         Interfaz2 vista = new Interfaz2();
-        Controladores controladores= new Controladores(vista);
-        controladores.arrancar();
+        EspacioController controlador = new EspacioController(vista, espacioDAO);
+
+        vista.setEspacioController(controlador);
+
+        vista.iniciar();
     }
 }
+
