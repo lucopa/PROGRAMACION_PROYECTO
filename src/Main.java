@@ -13,7 +13,7 @@ public class Main {
 
         vista.setEspacioController(controlador);
 
-        vista.iniciar();
+        vista.setVisible(true);
     }
 }
 

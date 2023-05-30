@@ -3,16 +3,16 @@
   <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="11" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="606" height="393"/>
+      <xy x="20" y="20" width="632" height="393"/>
     </constraints>
     <properties>
-      <background color="-16777216"/>
+      <background color="-16019058"/>
     </properties>
-    <border type="bevel-raised"/>
+    <border type="none"/>
     <children>
       <component id="4af60" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="0" row-span="4" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="4" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Descripción"/>
@@ -20,23 +20,15 @@
       </component>
       <component id="f55ea" class="javax.swing.JLabel">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Ordenadores"/>
         </properties>
       </component>
-      <component id="bd11" class="javax.swing.JRadioButton" binding="ordenadorNo">
-        <constraints>
-          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="No"/>
-        </properties>
-      </component>
       <component id="3b169" class="javax.swing.JLabel">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Proyector"/>
@@ -49,20 +41,13 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-16019058"/>
           <text value="Si"/>
-        </properties>
-      </component>
-      <component id="609e0" class="javax.swing.JRadioButton" binding="proyectorNo">
-        <constraints>
-          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="No"/>
         </properties>
       </component>
       <component id="8ca04" class="javax.swing.JLabel">
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Pizarra"/>
@@ -75,15 +60,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-16019058"/>
           <text value="Si"/>
-        </properties>
-      </component>
-      <component id="2d3fb" class="javax.swing.JRadioButton" binding="pizarraNo">
-        <constraints>
-          <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="No"/>
         </properties>
       </component>
       <component id="ae621" class="javax.swing.JTextField" binding="capacidad">
@@ -96,7 +74,7 @@
       </component>
       <component id="c322b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="ID espacio"/>
@@ -104,7 +82,7 @@
       </component>
       <component id="17fb1" class="javax.swing.JLabel">
         <constraints>
-          <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Nombre"/>
@@ -120,7 +98,7 @@
       </component>
       <component id="af36c" class="javax.swing.JButton" binding="actualizarButton" default-binding="true">
         <constraints>
-          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="7" use-parent-layout="false">
             <preferred-size width="172" height="30"/>
           </grid>
         </constraints>
@@ -130,7 +108,7 @@
       </component>
       <component id="29d7c" class="javax.swing.JButton" binding="delante">
         <constraints>
-          <grid row="10" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="3" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="&gt;&gt;"/>
@@ -146,7 +124,7 @@
       </component>
       <component id="677fa" class="javax.swing.JButton" binding="borrarButton" default-binding="true">
         <constraints>
-          <grid row="10" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="3" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Borrar"/>
@@ -154,7 +132,7 @@
       </component>
       <component id="6d708" class="javax.swing.JButton" binding="insertarButton" default-binding="true">
         <constraints>
-          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="6" use-parent-layout="false">
             <preferred-size width="162" height="30"/>
           </grid>
         </constraints>
@@ -172,7 +150,7 @@
       </component>
       <component id="5ef68" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Capacidad"/>
@@ -185,6 +163,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-16019058"/>
           <text value="Si"/>
         </properties>
       </component>
@@ -195,6 +174,33 @@
           </grid>
         </constraints>
         <properties/>
+      </component>
+      <component id="bd11" class="javax.swing.JRadioButton" binding="ordenadorNo">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16019058"/>
+          <text value="No"/>
+        </properties>
+      </component>
+      <component id="609e0" class="javax.swing.JRadioButton" binding="proyectorNo">
+        <constraints>
+          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16019058"/>
+          <text value="No"/>
+        </properties>
+      </component>
+      <component id="2d3fb" class="javax.swing.JRadioButton" binding="pizarraNo">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16019058"/>
+          <text value="No"/>
+        </properties>
       </component>
     </children>
   </grid>

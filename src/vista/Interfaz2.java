@@ -89,10 +89,10 @@ public class Interfaz2 extends JFrame{
                         int idEspacio = Integer.parseInt(id_espacio.getText());
                         indiceEspacioActual=idEspacio;
                     }
-                    EspacioDAO espacioDAO = new EspacioDAOImp();
-                    List<Espacio> espacios = espacioDAO.obtenerTodosLosEspacios();
-                    if(espacios.isEmpty()) {
-                        JOptionPane.showMessageDialog(Interfaz2.this,"No hay espacios");
+
+                    List<Espacio> espacios = espacioController.obtenerTodosLosEspacios();
+                    if(espacios==null) {
+
                         return;
                     }
                     if(indiceEspacioActual==espacios.size()){  //si hemos llegado al ultimo espacio, no avanza
@@ -123,44 +123,39 @@ public class Interfaz2 extends JFrame{
         detras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    EspacioDAO espacioDAO = new EspacioDAOImp();
-                    List<Espacio> espacios = null;
 
-                        espacios = espacioDAO.obtenerTodosLosEspacios();
+                List<Espacio> espacios = null;
 
-                    if(espacios.isEmpty()) {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "No hay espacios");
-                        return;
-                    }
-                    if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
-                        int idEspacio = Integer.parseInt(id_espacio.getText());
-                        indiceEspacioActual=idEspacio-1;
-                    }
-                    else {
-                        indiceEspacioActual=espacios.size();
-                    }
-                    indiceEspacioActual--;
+                espacios = espacioController.obtenerTodosLosEspacios();
 
-                    if (indiceEspacioActual<0){
-                        JOptionPane.showMessageDialog(Interfaz2.this,"No se puede retroceder");
-                        return;
-                    }
-                    Espacio espacio = espacios.get(indiceEspacioActual);
-                    id_espacio.setText(String.valueOf(espacio.getId_espacio()));
-                    descripcion.setText(espacio.getDescripcion());
-                    capacidad.setText(String.valueOf(espacio.getCapacidad()));
-                    ordenadorSi.setSelected(espacio.getOrdenadores()==1);
-                    ordenadorNo.setSelected(espacio.getOrdenadores()==0);
-                    proyectorSi.setSelected(espacio.getProyector()==1);
-                    proyectorNo.setSelected(espacio.getProyector()==0);
-                    pizarraSi.setSelected(espacio.getPizarra()==1);
-                    pizarraNo.setSelected(espacio.getPizarra()==0);
-                    nombre.setText(String.valueOf(espacio.getNombre()));
+                if(espacios==null) {
+                    return;
+                }
+                if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
+                    int idEspacio = Integer.parseInt(id_espacio.getText());
+                    indiceEspacioActual=idEspacio-1;
+                }
+                else {
+                    indiceEspacioActual=espacios.size();
+                }
+                indiceEspacioActual--;
 
-                } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
+                if (indiceEspacioActual<0){
+                    JOptionPane.showMessageDialog(Interfaz2.this,"No se puede retroceder");
+                    return;
+                }
+                Espacio espacio = espacios.get(indiceEspacioActual);
+                id_espacio.setText(String.valueOf(espacio.getId_espacio()));
+                descripcion.setText(espacio.getDescripcion());
+                capacidad.setText(String.valueOf(espacio.getCapacidad()));
+                ordenadorSi.setSelected(espacio.getOrdenadores()==1);
+                ordenadorNo.setSelected(espacio.getOrdenadores()==0);
+                proyectorSi.setSelected(espacio.getProyector()==1);
+                proyectorNo.setSelected(espacio.getProyector()==0);
+                pizarraSi.setSelected(espacio.getPizarra()==1);
+                pizarraNo.setSelected(espacio.getPizarra()==0);
+                nombre.setText(String.valueOf(espacio.getNombre()));
+
             }
         });
         actualizarButton.addActionListener(new ActionListener() {
@@ -177,21 +172,12 @@ public class Interfaz2 extends JFrame{
 
                     Espacio espacioActualizado = new Espacio(idEspacio, descripcion2, capacidad2, ordenadores, pizarra, proyector, nombre2, 0);
 
-                    EspacioDAO espacioDAO = new EspacioDAOImp();
-                    boolean exito = espacioDAO.actualizarEspacioPorID(espacioActualizado, idEspacio);
 
-                    if (exito) {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "Espacio actualizado correctamente");
+                  espacioController.actualizarEspacio(espacioActualizado, idEspacio);
 
-                    } else {
-                        JOptionPane.showMessageDialog(Interfaz2.this, "Error al actualizar el espacio");
-                    }
+
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(Interfaz2.this, "Error de formato en los campos numéricos");
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(Interfaz2.this, "Error de base de datos: " + ex.getMessage());
-
-                    System.out.println("prueba");
                 }
             }
         });
@@ -225,23 +211,12 @@ public class Interfaz2 extends JFrame{
     }
 
 
-    public static void main(String[] args) {
-        JFrame frame = new Interfaz2();
-        frame.setVisible(true);
-
-    }
-
     public void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(Interfaz2.this, mensaje);
         
     }
 
-    public void mostrarEspacios(List<Espacio> espacios) {
-    }
 
-    public void iniciar() {
-    }
 
-    public void mostrarEspacio(Espacio espacio) {
-    }
+
 }

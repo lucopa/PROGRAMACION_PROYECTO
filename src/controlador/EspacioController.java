@@ -58,30 +58,34 @@ public class EspacioController {
         }
     }
 
-    public void obtenerEspacio(int idEspacio) {
+    public Espacio obtenerEspacio(int idEspacio) {
         try {
             Espacio espacio = espacioDAO.obtenerEspacioPorID(idEspacio);
             if (espacio != null) {
-                vista.mostrarEspacio(espacio);
+                return espacio;
             } else {
                 vista.mostrarMensaje("El espacio no existe");
             }
         } catch (SQLException e) {
             vista.mostrarMensaje("Error de base de datos: " + e.getMessage());
         }
+        return null;
     }
 
-    public void obtenerTodosLosEspacios() {
+    public List<Espacio> obtenerTodosLosEspacios() {
         try {
             List<Espacio> espacios = espacioDAO.obtenerTodosLosEspacios();
             if (!espacios.isEmpty()) {
-                vista.mostrarEspacios(espacios);
+                return espacios;
             } else {
                 vista.mostrarMensaje("No hay espacios disponibles");
             }
         } catch (SQLException e) {
             vista.mostrarMensaje("Error de base de datos: " + e.getMessage());
         }
+        return null;
     }
+
+
 }
 
