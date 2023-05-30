@@ -85,16 +85,27 @@ public class Interfaz2 extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     indiceEspacioActual=0;
-                    if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
-                        int idEspacio = Integer.parseInt(id_espacio.getText());
-                        indiceEspacioActual=idEspacio;
-                    }
+
 
                     List<Espacio> espacios = espacioController.obtenerTodosLosEspacios();
                     if(espacios==null) {
 
                         return;
                     }
+
+                   if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
+
+                       for (Espacio espacio:espacios) {
+                           indiceEspacioActual++;
+                           if (espacio.getId_espacio()==Integer.parseInt(id_espacio.getText())){
+                               break;
+                           }
+                        }
+
+                    }
+
+
+
                     if(indiceEspacioActual==espacios.size()){  //si hemos llegado al ultimo espacio, no avanza
                         JOptionPane.showMessageDialog(Interfaz2.this,"No se puede avanzar");
                         return;
@@ -132,8 +143,12 @@ public class Interfaz2 extends JFrame{
                     return;
                 }
                 if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
-                    int idEspacio = Integer.parseInt(id_espacio.getText());
-                    indiceEspacioActual=idEspacio-1;
+                    for(int i=espacios.size()-1;i==0;i--){
+                        if(espacios.get(i).getId_espacio()==Integer.parseInt(id_espacio.getText())){
+                            indiceEspacioActual=i;
+                            break;
+                        }
+                    }
                 }
                 else {
                     indiceEspacioActual=espacios.size();
