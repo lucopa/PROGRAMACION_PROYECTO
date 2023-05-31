@@ -24,7 +24,8 @@ public class ReservaDAOImp implements ReservaDAO {
         sentencia.setInt(3, reserva.getDuracion());
         sentencia.setInt(4, reserva.getHora());
         sentencia.setString(5, reserva.getMotivo());
-        sentencia.setInt(6, reserva.getId_espacio());
+        //sentencia.setInt(6, reserva.getId_espacio());
+        sentencia.setNull(6,Types.NULL);
         int exito = sentencia.executeUpdate();
         if (sentencia != null)
             sentencia.close();
@@ -44,10 +45,15 @@ public class ReservaDAOImp implements ReservaDAO {
 
     @Override
     public boolean actualizarReservaPorCodigo(Reserva newReserva, int codigo_reserva) throws SQLException {
-        String sql = "UPDATE Reserva SET codigo_reserva = ?, fecha_reserva= ?;";
+        String sql = "UPDATE Reserva SET fecha_reserva= ?,duracion=?,hora=?,motivo=?,id_espacio=? WHERE codigo_reserva = ?;";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
-        sentencia.setInt(1, newReserva.getCodigo_reserva());
-        sentencia.setString(2, newReserva.getFecha_reserva());
+
+        sentencia.setString(1, newReserva.getFecha_reserva());
+        sentencia.setInt(2,newReserva.getDuracion());
+        sentencia.setInt(3,newReserva.getHora());
+        sentencia.setString(4, newReserva.getMotivo());
+        sentencia.setInt(5,newReserva.getId_espacio());
+        sentencia.setInt(6, newReserva.getCodigo_reserva());
         int exito = sentencia.executeUpdate();
         if (sentencia != null)
             sentencia.close();
@@ -67,7 +73,8 @@ public class ReservaDAOImp implements ReservaDAO {
             int duracion    = resultado.getInt("duracion");
             int hora    = resultado.getInt("hora");
             String motivo = resultado.getString("motivo");
-            int id_espacio    = resultado.getInt("id_espacio");
+            //int id_espacio    = resultado.getInt("id_espacio");
+            int id_espacio=0;
             reserva= new Reserva(codigo_reserva, fecha_reserva, duracion,hora,motivo,id_espacio);
         }
         if (resultado != null)
@@ -90,7 +97,8 @@ public class ReservaDAOImp implements ReservaDAO {
             int duracion    = resultado.getInt("duracion");
             int hora    = resultado.getInt("hora");
             String motivo = resultado.getString("motivo");
-            int id_espacio    = resultado.getInt("id_espacio");
+            //int id_espacio    = resultado.getInt("id_espacio");
+            int id_espacio=0;
             Reserva reserva= new Reserva(codigo, fecha_reserva, duracion,hora,motivo,id_espacio);
             reservas.add(reserva);
         }

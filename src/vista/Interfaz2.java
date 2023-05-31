@@ -142,7 +142,7 @@ public class Interfaz2 extends JFrame{
                 if(espacios==null) {
                     return;
                 }
-                if (id_espacio.getText().compareTo("") != 0) {//si  no esta vacio, va a empezar a avanzar desde el primer elemento
+                if (id_espacio.getText().compareTo("") != 0) {
                     for(int i=espacios.size()-1;i==0;i--){
                         if(espacios.get(i).getId_espacio()==Integer.parseInt(id_espacio.getText())){
                             indiceEspacioActual=i;
